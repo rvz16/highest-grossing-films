@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films Information</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        header {
+            text-align: center;
+        }
+        .filters {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .filters label, .filters input, .filters button {
+            margin: 0 5px;
+        }
+        .film-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .film-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        .film-card h3 {
+            margin: 0 0 10px;
+        }
+        .film-card p {
+            margin: 5px 0;
+        }
+        .chart-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        h2 {
+            text-align: center; 
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Films Information</h1>
+        <div class="filters">
+            <label for="year-filter">Filter by Release Year:</label>
+            <input type="number" id="year-filter" placeholder="Enter year">
+            <label for="director-filter">Filter by Director:</label>
+            <input type="text" id="director-filter" placeholder="Enter director">
+            <label for="country-filter">Filter by Country:</label>
+            <input type="text" id="country-filter" placeholder="Enter country">
+            <button id="filter-button">Filter</button>
+            <button id="reset-button">Reset</button>
+        </div>
+    </header>
+    <main>
+        <div class="film-cards" id="film-cards">
+        </div>
+        <div class="chart-container">
+            <h2>Top 10 Films by Box Office</h2>
+            <canvas id="boxOfficeChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Films by Director</h2>
+            <canvas id="directorChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Films by Country</h2>
+            <canvas id="countryChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Films by Release Year</h2>
+            <canvas id="yearChart"></canvas>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
